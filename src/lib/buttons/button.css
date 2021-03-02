@@ -1,0 +1,328 @@
+.lc-button {
+  @apply lc-inline-flex;
+  @apply lc-items-center;
+  @apply lc-justify-center;
+  @apply lc-text-center;
+  @apply lc-font-sans;
+  @apply lc-text-sm;
+  @apply lc-appearance-none;
+  @apply lc-no-underline;
+  @apply lc-transform;
+
+  &:hover {
+    @apply lc-cursor-pointer;
+  }
+  &:active {
+    @apply lc-scale-98;
+  }
+  &:disabled {
+    @apply lc-scale-100;
+    @apply lc-opacity-50;
+    @apply lc-cursor-not-allowed;
+  }
+  &:focus {
+    @apply lc-ring-transparent;
+  }
+
+  // Default button
+  &-default {
+    @apply lc-text-gray-darker;
+    @apply lc-bg-gray-lighter;
+    @apply lc-border-gray-lighter;
+
+    &:hover {
+      @apply lc-text-black;
+      @apply lc-bg-gray-light;
+      @apply lc-border-gray-light;
+    }
+    &:focus-visible {
+      @apply lc-ring-gray-lighter;
+    }
+  }
+
+  // Primary button
+  &-primary {
+    @apply lc-text-white;
+    @apply lc-bg-primary;
+    @apply lc-border-primary;
+
+    &:hover {
+      @apply lc-text-white;
+      @apply lc-bg-primary-dark;
+      @apply lc-border-primary-dark;
+    }
+    &:focus-visible {
+      @apply lc-ring-primary;
+    }
+  }
+
+  // Accent button
+  &-accent {
+    @apply lc-text-white;
+    @apply lc-bg-accent;
+    @apply lc-border-accent;
+
+    &:hover {
+      @apply lc-text-white;
+      @apply lc-bg-accent-dark;
+      @apply lc-border-accent-dark;
+    }
+    &:focus-visible {
+      @apply lc-ring-accent;
+    }
+  }
+
+  // Success button
+  &-success {
+    @apply lc-text-white;
+    @apply lc-bg-success;
+    @apply lc-border-success;
+
+    &:hover {
+      @apply lc-text-white;
+      @apply lc-bg-success-dark;
+      @apply lc-border-success-dark;
+    }
+    &:focus-visible {
+      @apply lc-ring-success;
+    }
+  }
+
+  // Info button
+  &-info {
+    @apply lc-text-white;
+    @apply lc-bg-info;
+    @apply lc-border-info;
+
+    &:hover {
+      @apply lc-text-white;
+      @apply lc-bg-info-dark;
+      @apply lc-border-info-dark;
+    }
+    &:focus-visible {
+      @apply lc-ring-info;
+    }
+  }
+
+  // Warning button
+  &-warn {
+    @apply lc-text-white;
+    @apply lc-bg-warn;
+    @apply lc-border-warn;
+
+    &:hover {
+      @apply lc-bg-warn-dark;
+      @apply lc-border-warn-dark;
+      @apply lc-text-white;
+    }
+    &:focus-visible {
+      @apply lc-ring-warn;
+    }
+  }
+
+  // Danger button
+  &-danger {
+    @apply lc-text-white;
+    @apply lc-bg-danger;
+    @apply lc-border-danger;
+
+    &:hover {
+      @apply lc-text-white;
+      @apply lc-bg-danger-dark;
+      @apply lc-border-danger-dark;
+    }
+    &:focus-visible {
+      @apply lc-ring-danger;
+    }
+  }
+
+  // Button outline
+  &-outline {
+    @apply lc-text-gray-darker;
+    @apply lc-border-gray-light;
+
+    &:hover {
+      @apply lc-text-black;
+      @apply lc-bg-gray-light;
+    }
+    &:focus-visible {
+      @apply lc-ring-gray-lighter;
+    }
+  }
+
+  // Button outline primary
+  &-outline-primary {
+    @apply lc-text-primary;
+    @apply lc-border-primary;
+
+    &:hover {
+      @apply lc-text-white;
+      @apply lc-bg-primary;
+    }
+    &:focus-visible {
+      @apply lc-ring-primary;
+    }
+  }
+
+  // Button outline accent
+  &-outline-accent {
+    @apply lc-text-accent;
+    @apply lc-border-accent;
+
+    &:hover {
+      @apply lc-text-white;
+      @apply lc-bg-accent;
+    }
+    &:focus-visible {
+      @apply lc-ring-accent;
+    }
+  }
+
+  // Button outline info
+  &-outline-info {
+    @apply lc-text-info;
+    @apply lc-border-info;
+
+    &:hover {
+      @apply lc-text-white;
+      @apply lc-bg-info;
+    }
+    &:focus-visible {
+      @apply lc-ring-info;
+    }
+  }
+
+  // Button outline success
+  &-outline-success {
+    @apply lc-text-success;
+    @apply lc-border-success;
+
+    &:hover {
+      @apply lc-text-white;
+      @apply lc-bg-success;
+    }
+    &:focus-visible {
+      @apply lc-ring-success;
+    }
+  }
+
+  // Button outline warn
+  &-outline-warn {
+    @apply lc-text-warn;
+    @apply lc-border-warn;
+
+    &:hover {
+      @apply lc-text-white;
+      @apply lc-bg-warn;
+    }
+    &:focus-visible {
+      @apply lc-ring-warn;
+    }
+  }
+
+  // Button outline danger
+  &-outline-danger {
+    @apply lc-text-danger;
+    @apply lc-border-danger;
+
+    &:hover {
+      @apply lc-text-white;
+      @apply lc-bg-danger;
+    }
+    &:focus-visible {
+      @apply lc-ring-danger;
+    }
+  }
+
+  // Button link
+  &-link {
+    @apply lc-text-primary;
+
+    &:hover {
+      @apply lc-text-primary-dark;
+    }
+    &:focus {
+      @apply lc-text-primary-dark;
+    }
+  }
+
+  // Styled button
+  &-styled {
+    @apply lc-h-48;
+    @apply lc-py-14;
+    @apply lc-px-20;
+    @apply lc-text-sm;
+    @apply lc-leading-4;
+    @apply lc-font-bold;
+    @apply lc-border-1;
+    @apply lc-rounded;
+
+    &:focus {
+      @apply lc-ring-4;
+      @apply lc-ring-opacity-50;
+      @apply lc-outline-none;
+    }
+  }
+
+  // Unstyled button
+  &-unstyled {
+    @apply lc-bg-transparent;
+
+    &:focus {
+      @apply lc-outline-none;
+    }
+    &:focus-visible {
+      @apply lc-outline-black;
+    }
+  }
+
+  //   &-primary {
+  //     color: useColorVar(button-primary-text);
+  //     background-color: useColorVar(button-primary-bg);
+  //     border-color: useColorVar(button-primary-bg);
+
+  //     &:hover {
+  //       color: useColorVar(button-primary-text-hover);
+  //       background-color: useColorVar(button-primary-bg-hover);
+  //       border-color: useColorVar(button-primary-bg-hover);
+  //     }
+
+  //     &:focus-visible {
+  //       --tw-ring-color: useColorVar(button-primary-bg, ring);
+  //     }
+  //   }
+
+  //   &-accent {
+  //     color: useColorVar(button-accent-text);
+  //     background-color: useColorVar(button-accent-bg);
+  //     border-color: useColorVar(button-accent-bg);
+
+  //     &:hover {
+  //       color: useColorVar(button-accent-text-hover);
+  //       background-color: useColorVar(button-accent-bg-hover);
+  //       border-color: useColorVar(button-accent-bg-hover);
+  //     }
+
+  //     &:focus-visible {
+  //       --tw-ring-color: useColorVar(button-accent-bg, ring);
+  //     }
+  //   }
+  // }
+
+  // @each $variant in default, primary, accent {
+  //   .lc-button-$(variant) {
+  //     color: useColorVar(button-primary-text);
+  //     background-color: useColorVar(button-primary-bg);
+  //     border-color: useColorVar(button-primary-bg);
+
+  //     &:hover {
+  //       color: useColorVar(button-primary-text-hover);
+  //       background-color: useColorVar(button-primary-bg-hover);
+  //       border-color: useColorVar(button-primary-bg-hover);
+  //     }
+
+  //     &:focus-visible {
+  //       --tw-ring-color: useColorVar(button-primary-bg, ring);
+  //     }
+  //   }
+}

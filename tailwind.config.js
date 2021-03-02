@@ -1,4 +1,5 @@
 const defaultTheme = require('tailwindcss/defaultTheme');
+const components = require('./tailwind/components');
 const { cssVar } = require('./tailwind/helpers');
 const { baseColors, themeColors } = require('./tailwind/colors');
 
@@ -91,5 +92,7 @@ module.exports = {
       outline: ['focus-visible']
     }
   },
-  plugins: []
+  plugins: [
+    // require('./tailwind/components')
+  ]
 };

@@ -14,6 +14,7 @@
  */
 
 const { hexToRGB } = require('./util');
+const { useColorVar } = require('./tailwind/helpers');
 
 module.exports = {
   inject: false,
@@ -24,7 +25,7 @@ module.exports = {
     require('postcss-each'),
     require('precss'),
     require('postcss-functions')({
-      functions: { hexToRGB }
+      functions: { hexToRGB, useColorVar }
     }),
     // Only include the `postcss-url` plugin for our TSDX builds,
     // because Storybook uses webpack to process and bundle assets,
