@@ -1,7 +1,6 @@
 import React from 'react';
 import { PieChart, BarChart, LineChart, TimeChart } from '..';
 import { getCssVar } from '../../util/colors';
-import { ChartJSData } from '../chart.helpers';
 import './chart-examples.css';
 
 export const PieChartExample1 = () => {
@@ -10,8 +9,7 @@ export const PieChartExample1 = () => {
       type="doughnut"
       tooltipComponent={() => <div>Hello World</div>}
       legendComponent={({ data }) => {
-        const chartData = data as ChartJSData;
-        return <div>Hello World, First Label: {chartData.labels ? chartData.labels[0] : ''}</div>;
+        return <div>Hello World, First Label: {data.labels ? data.labels[0] : ''}</div>;
       }}
       data={[
         { label: 'Label 1', value: 1, color: `rgb(${getCssVar('lc-color-primary')})` },
