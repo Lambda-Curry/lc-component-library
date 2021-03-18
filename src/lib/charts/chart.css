@@ -1,0 +1,95 @@
+.lc-chart {
+  &-label {
+    display: inline-flex;
+    align-items: center;
+    @apply lc-text-sm;
+    @apply lc-text-gray;
+    @apply lc-font-bold;
+
+    &-color {
+      display: inline-block;
+      width: theme('spacing.8');
+      height: theme('spacing.8');
+      margin-right: theme('spacing.12');
+      border-radius: theme('borderRadius.sm');
+    }
+  }
+
+  &-legend {
+    display: flex;
+    flex-flow: row wrap;
+    padding: theme('spacing.16') 0;
+    margin: -theme('spacing.4') -theme('spacing.16');
+
+    &-item {
+      padding: theme('spacing.4') theme('spacing.16');
+
+      &-label {
+        @apply lc-font-normal;
+        @apply lc-text-gray-dark;
+      }
+
+      &-value {
+        margin-left: theme('spacing.4');
+      }
+
+      &-button {
+        padding: theme('spacing.8') theme('spacing.16');
+        border-radius: 100px;
+        @apply lc-border-1;
+        @apply lc-border-gray-lightest;
+        @apply lc-text-gray-light;
+        @apply lc-bg-gray-lightest;
+
+        .lc-chart-label {
+          color: inherit;
+        }
+
+        .lc-button-content {
+          display: flex;
+          align-items: center;
+        }
+
+        &:hover {
+          @apply lc-text-gray;
+          @apply lc-border-gray-lighter;
+        }
+      }
+
+      &-active &-button {
+        @apply lc-text-gray-dark;
+        @apply lc-bg-transparent;
+        @apply lc-border-gray-lighter;
+        box-shadow: 0px 8px 20px -12px rgba(0, 0, 0, 0.15);
+      }
+    }
+
+    &-interactive {
+      padding: theme('spacing.8') 0;
+      margin: -theme('spacing.8') -theme('spacing.8');
+    }
+
+    &-interactive &-item {
+      padding: theme('spacing.8') theme('spacing.8');
+    }
+  }
+
+  &-tooltip {
+    position: absolute;
+    pointer-events: none;
+    transform: translate(-50%, -100%);
+    transition: all 0.3s ease-in-out;
+
+    &-content {
+      @apply lc-bg-white;
+      @apply lc-text-sm;
+      @apply lc-p-20;
+      @apply lc-rounded-lg;
+      @apply lc-border-1;
+      @apply lc-border-gray-lighter;
+
+      text-align: center;
+      box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.1);
+    }
+  }
+}

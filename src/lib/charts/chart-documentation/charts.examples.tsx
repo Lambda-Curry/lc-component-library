@@ -6,30 +6,20 @@ import './chart-examples.css';
 
 export const PieChartExample1 = () => {
   return (
-    <div className="chart-row">
-      <PieChart
-        type="doughnut"
-        tooltipComponent={() => <div>Hello World</div>}
-        legendComponent={(data: ChartJSData) => (
-          <div>Hello World, First Label: {data.labels ? data.labels[0] : ''}</div>
-        )}
-        data={[
-          { label: 'Label 1', value: 1, color: `rgb(${getCssVar('lc-color-primary')})` },
-          { label: 'Label 2', value: 4, color: `rgb(${getCssVar('lc-color-accent')})` },
-          { label: 'Label 3', value: 6, color: `rgb(${getCssVar('lc-color-primary-dark')})` },
-          { label: 'Label 4', value: 8, color: `rgb(${getCssVar('lc-color-accent-dark')})` }
-        ]}
-      />
-      <PieChart
-        type="doughnut"
-        data={[
-          { label: 'Label 1', value: 1, color: `rgb(${getCssVar('lc-color-primary')})` },
-          { label: 'Label 2', value: 2, color: `rgb(${getCssVar('lc-color-accent')})` },
-          { label: 'Label 3', value: 3, color: `rgb(${getCssVar('lc-color-primary-dark')})` },
-          { label: 'Label 4', value: 4, color: `rgb(${getCssVar('lc-color-accent-dark')})` }
-        ]}
-      />
-    </div>
+    <PieChart
+      type="doughnut"
+      tooltipComponent={() => <div>Hello World</div>}
+      legendComponent={({ data }) => {
+        const chartData = data as ChartJSData;
+        return <div>Hello World, First Label: {chartData.labels ? chartData.labels[0] : ''}</div>;
+      }}
+      data={[
+        { label: 'Label 1', value: 1, color: `rgb(${getCssVar('lc-color-primary')})` },
+        { label: 'Label 2', value: 4, color: `rgb(${getCssVar('lc-color-accent')})` },
+        { label: 'Label 3', value: 6, color: `rgb(${getCssVar('lc-color-primary-dark')})` },
+        { label: 'Label 4', value: 8, color: `rgb(${getCssVar('lc-color-accent-dark')})` }
+      ]}
+    />
   );
 };
 

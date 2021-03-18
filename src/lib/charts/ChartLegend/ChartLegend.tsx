@@ -5,12 +5,14 @@ import {
   ChartJSDataFunction,
   ChartLegendComponent,
   ChartRefObject,
-  getPieChartPercentage
+  getPieChartPercentage,
+  ChartLegendComponentProps
 } from '../chart.helpers';
-
+import { ChartLegendItem } from './ChartLegendItem';
+import classNames from 'classnames';
 import './chart-legend.css';
 
-export interface ChartLegendProps extends HTMLAttributes<HTMLDivElement> {
+export interface ChartLegendProps extends Omit<ChartLegendComponentProps, 'data'> {
   type?: ChartType;
   data: ChartJSData | ChartJSDataFunction;
   chartRef: ChartRefObject;
@@ -50,6 +52,33 @@ const PieChartLegendContent: FC<{ data: ChartJSData }> = ({ data }) => {
   );
 };
 
+const ChartLegendContent: FC<ChartLegendComponentProps> = ({ data, interactive, onItemClick }) => {
+  if (!data.datasets || !data.datasets[0].data || !data.labels) return null;
+
+  const { datasets } = data as ChartJSData;
+
+  return (
+    <ul className={classNames('lc-chart-legend', { 'lc-chart-legend-interactive': interactive })}>
+      {datasets &&
+        datasets.map(({ label, borderColor, backgroundColor, pointBackgroundColor, hidden }, index) => {
+          const color = backgroundColor || pointBackgroundColor || borderColor;
+
+          return (
+            <ChartLegendItem
+              key={index}
+              index={index}
+              color={color as string}
+              label={label}
+              onClick={onItemClick}
+              active={!hidden}
+              interactive={interactive}
+            />
+          );
+        })}
+    </ul>
+  );
+};
+
 export const ChartLegend: FC<ChartLegendProps> = ({ type, data: chartJSData, chartRef, component, ...props }) => {
   const data =
     typeof chartJSData === 'function'
@@ -60,7 +89,17 @@ export const ChartLegend: FC<ChartLegendProps> = ({ type, data: chartJSData, cha
 
   return (
     <div className="lc-chart-legend" {...props}>
-      {component ? component(data) : <>{['pie', 'doughnut'].includes(type) && <PieChartLegendContent data={data} />}</>}
+      {component ? (
+        component({ data, ...props })
+      ) : (
+        <>
+          {['pie', 'doughnut'].includes(type) ? (
+            <PieChartLegendContent data={data} />
+          ) : (
+            <ChartLegendContent data={data} {...props} />
+          )}
+        </>
+      )}
     </div>
   );
 };

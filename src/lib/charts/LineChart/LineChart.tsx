@@ -24,11 +24,11 @@ export const LineChart: FC<LineChartProps> = ({ labels, datasets, chartJSData, o
           borderWidth: 2,
           borderColor: color,
           borderCapStyle: 'round',
-          pointHitRadius: 3,
-          pointBorderColor: 'transparent',
-          pointBackgroundColor: 'transparent',
-          pointHoverBorderColor: color,
-          pointHoverBackgroundColor: color,
+          pointRadius: 0,
+          pointHitRadius: 10,
+          pointBorderColor: color,
+          pointBackgroundColor: color,
+          pointHoverRadius: 3,
           ...dataset
         };
       })

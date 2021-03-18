@@ -1,5 +1,5 @@
 import { ReactNode, RefObject } from 'react';
-import Chart, { ChartDataSets, ChartOptions, ChartTooltipModel } from 'chart.js';
+import { ChartDataSets, ChartOptions, ChartTooltipModel } from 'chart.js';
 import ChartComponent, { ChartComponentProps, LinearComponentProps, ChartDataFunction } from 'react-chartjs-2';
 
 export type ChartLabels = Chart.ChartData['labels'];
@@ -8,12 +8,19 @@ export type ChartRefComponent = ChartComponent<ChartComponentProps | LinearCompo
 
 export type ChartRefObject = RefObject<ChartRefComponent>;
 
-export type ChartTooltipComponent = (tooltip: ChartTooltipModel, chartRef: ChartRefObject) => ReactNode;
+export type ChartTooltipComponent = (props: { model: ChartTooltipModel; chartRef: ChartRefObject }) => ReactNode;
 
-export type ChartLegendComponent = (data: ChartJSData) => ReactNode;
+export type ChartLegendComponentProps = {
+  data: ChartJSData;
+  interactive?: boolean;
+  onItemClick?: (event: React.MouseEvent<any, MouseEvent>, index: number) => void;
+};
+
+export type ChartLegendComponent = (props: ChartLegendComponentProps) => ReactNode;
 
 export interface ChartJSOptions extends ChartOptions {
   borderRadius?: number;
+  datasetDisplayLimit?: number;
 }
 
 export interface ChartJSData {
