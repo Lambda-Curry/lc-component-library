@@ -15,7 +15,6 @@ const { terser } = require('rollup-plugin-terser');
 const nodeResolve = require('@rollup/plugin-node-resolve').default;
 const postCSSConfig = require('./postcss.config');
 
-
 module.exports = {
   rollup(config, options) {
     config.plugins = [

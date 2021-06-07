@@ -38,8 +38,8 @@
     "framer-motion": "^3.2.1",
     "lodash": "^4.17.20",
     "luxon": "^1.25.0",
+    "moment": "^2.29.1",
     "notistack": "^1.0.3",
-    "postcss-focus-visible": "^5.0.0",
     "react": "16.13.1",
     "react-chartjs-2": "^2.11.1",
     "react-dom": "16.13.1",
@@ -112,6 +112,7 @@
     "postcss-cli": "^7.1.1",
     "postcss-comment": "^2.0.0",
     "postcss-each": "^0.10.0",
+    "postcss-focus-visible": "^5.0.0",
     "postcss-functions": "3.0.0",
     "postcss-import": "12.0.0",
     "postcss-nested": "^4.2.3",
@@ -183,5 +184,6 @@
     "react",
     "component",
     "library"
-  ]
+  ],
+  "sideEffects": false
 }
