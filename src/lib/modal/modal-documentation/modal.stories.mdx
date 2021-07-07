@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Meta, Story, Canvas, ArgsTable, Source } from '@storybook/addon-docs';
-import { Modal, ButtonPrimary } from '../..';
 import dedent from 'string-dedent';
+import { Modal, ModalHeader, ButtonPrimary } from '../..';
 
 <Meta title="Modal" component={Modal} />
 
@@ -33,7 +33,7 @@ import dedent from 'string-dedent';
         <div className="modals-story">
           <ButtonPrimary onClick={() => setOpen(!open)}>Toggle Modal</ButtonPrimary>
           <Modal isOpen={open} onAfterClose={() => setOpen(false)}>
-            <Title>Modal Title</Title>
+            <ModalHeader title="Modal Title" />
             <p className="text">This is an example modal.</p>
           </Modal>
         </div>

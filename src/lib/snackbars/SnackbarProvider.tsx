@@ -20,7 +20,11 @@ export const SnackbarProvider: FC<SnackbarProviderProps> = props => {
       ref={snackbarProviderRef}
       classes={{
         root: 'snackbar',
-        containerRoot: 'snackbars'
+        containerRoot: 'snackbars',
+        variantInfo: 'snackbar-info',
+        variantSuccess: 'snackbar-success',
+        variantWarning: 'snackbar-warning',
+        variantError: 'snackbar-danger'
       }}
       anchorOrigin={{
         vertical: 'bottom',

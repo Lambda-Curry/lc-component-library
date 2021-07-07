@@ -15,6 +15,7 @@
     @apply lc-text-sm;
     @apply lc-text-gray-dark;
     @apply lc-border-solid;
+    @apply lc-border-0;
     @apply lc-border-t-1;
     @apply lc-border-gray-lightest;
     @apply lc-pt-24;

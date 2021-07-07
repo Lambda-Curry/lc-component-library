@@ -1,7 +1,9 @@
 $snackbars-min-width: 280px;
 
 .snackbars {
+  z-index: 9999999;
   min-width: $snackbars-min-width;
+  // pointer-events: auto !important;
 }
 
 .snackbar-action {
@@ -32,7 +34,10 @@ $snackbars-min-width: 280px;
 }
 
 .snackbar {
-  [class*='contentRoot'] {
+  padding: 8px;
+  pointer-events: auto !important;
+
+  [class*='SnackbarItem-contentRoot'] {
     @apply lc-font-sans;
     @apply lc-text-sm;
     @apply lc-text-white;
@@ -50,7 +55,7 @@ $snackbars-min-width: 280px;
 
   See: https://github.com/tailwindlabs/tailwindcss/discussions/2927
   */
-  [class*='variantSuccess'] {
+  &-success {
     @apply lc-text-white;
     background-color: rgb(var(--lc-color-success)) !important;
 
@@ -59,7 +64,7 @@ $snackbars-min-width: 280px;
     }
   }
 
-  [class*='variantWarning'] {
+  &-warning {
     @apply lc-text-white;
     background-color: rgb(var(--lc-color-warning)) !important;
 
@@ -68,7 +73,7 @@ $snackbars-min-width: 280px;
     }
   }
 
-  [class*='variantError'] {
+  &-danger {
     @apply lc-text-white;
     background-color: rgb(var(--lc-color-danger)) !important;
 
@@ -77,7 +82,7 @@ $snackbars-min-width: 280px;
     }
   }
 
-  [class*='variantInfo'] {
+  &-info {
     @apply lc-text-white;
     background-color: rgb(var(--lc-color-primary)) !important;
 
