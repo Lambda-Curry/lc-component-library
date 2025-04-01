@@ -1,0 +1,23 @@
+.lc-data-table {
+  &-wrapper {
+    width: 100%;
+    overflow-x: auto;
+  }
+
+  &-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: theme('spacing.16');
+    margin-bottom: theme('spacing.16');
+  }
+
+  &-filter {
+    min-width: 200px;
+  }
+
+  &-pagination {
+    margin-top: theme('spacing.16');
+    display: flex;
+    justify-content: flex-end;
+  }
+}

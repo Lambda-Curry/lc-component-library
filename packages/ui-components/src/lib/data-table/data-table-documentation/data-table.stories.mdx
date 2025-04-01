@@ -1,0 +1,105 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs';
+import { DataTable } from '..';
+import { DataTableExample } from './data-table.examples';
+
+<Meta title="Components/DataTable" component={DataTable} />
+
+# DataTable
+
+The DataTable component is a powerful table component that supports filtering, pagination, and sorting.
+It uses `nuqs` for URL-based state management and `zod` for schema validation of filter values.
+
+## Features
+
+- URL-based filtering with `nuqs`
+- Schema validation with `zod`
+- Pagination
+- Custom filter components
+- Responsive design
+
+## Basic Usage
+
+<Canvas>
+  <Story name="Default">
+    <DataTableExample />
+  </Story>
+</Canvas>
+
+## Props
+
+<ArgsTable of={DataTable} />
+
+## Filter Types
+
+The DataTable comes with several built-in filter types:
+
+- **Text Filter**: For filtering text fields
+- **Select Filter**: For selecting from predefined options
+- **Number Filter**: For filtering numeric values
+- **Date Filter**: For filtering date values
+
+Each filter type has a corresponding schema defined with `zod` for validation.
+
+## Creating Custom Filters
+
+You can create custom filters by implementing the `DataTableFilter` interface:
+
+```tsx
+import { z } from 'zod';
+
+const myCustomFilter = {
+  name: 'myFilter',
+  label: 'My Filter',
+  schema: z.string().nullable(),
+  component: ({ value, onChange, label }) => (
+    <MyCustomComponent
+      value={value}
+      onChange={onChange}
+      label={label}
+    />
+  ),
+  defaultValue: null
+};
+```
+
+## URL State Management
+
+The DataTable uses `nuqs` to manage filter state in the URL. This allows for:
+
+- Shareable filtered views
+- Browser history navigation
+- Persistence of filters across page reloads
+
+## Example Implementation
+
+```tsx
+import { DataTable } from '@lambdacurry/component-library';
+import { createTextFilter, createSelectFilter } from '@lambdacurry/component-library';
+
+const MyDataTable = () => {
+  const data = [...]; // Your data array
+  
+  const columns = [
+    { header: 'Name', accessor: 'name' },
+    { header: 'Email', accessor: 'email' },
+    { header: 'Role', accessor: 'role' }
+  ];
+  
+  const filters = [
+    createTextFilter('name', 'Name', 'Search by name...'),
+    createSelectFilter('role', 'Role', [
+      { value: 'admin', label: 'Admin' },
+      { value: 'user', label: 'User' }
+    ])
+  ];
+  
+  return (
+    <DataTable
+      data={data}
+      columns={columns}
+      filters={filters}
+      itemsPerPage={10}
+    />
+  );
+};
+```

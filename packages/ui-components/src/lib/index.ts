@@ -18,6 +18,8 @@ export * from './tabs';
 export * from './table';
 export * from './theme';
 export * from './tooltips';
+export * from './data-table';
+export * from './data-table/filters';
 
 // Hooks
 export * from './hooks';
