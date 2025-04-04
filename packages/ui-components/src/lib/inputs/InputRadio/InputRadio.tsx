@@ -19,7 +19,7 @@ export const InputRadio: FC<InputRadioProps> = ({
 }) => {
   return (
     <FormControlLabel
-      control={<Radio {...props} color={color} />}
+      control={<Radio {...props} color={color} inputProps={{ 'aria-label': typeof label === 'string' ? label : undefined }} />}
       className={classNames('lc-input lc-input-radio', className)}
       label={label}
       labelPlacement={labelPlacement}

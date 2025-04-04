@@ -66,6 +66,8 @@ export const InputSwitch: FC<InputSwitchProps> = ({
         name={name}
         type="checkbox"
         className="lc-input-switch-input"
+        role="switch"
+        aria-checked={fieldValue}
         {...fieldProps}
         {...props}
         checked={fieldValue}
